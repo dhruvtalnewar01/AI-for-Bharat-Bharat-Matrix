@@ -1,0 +1,18 @@
+# LAM Execution Layer — Bharat MatrixAI
+# Core Dependencies
+
+# Browser Automation
+playwright==1.49.1
+
+# AWS SDK (Bedrock)
+boto3==1.35.81
+
+# API Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# Image Processing
+Pillow==11.1.0
+
+# Data Validation
+pydantic==2.10.4

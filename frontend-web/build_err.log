@@ -1,0 +1,25 @@
+
+> frontend-web@0.1.0 build
+> next build
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/app/layout.tsx:6:20
+Ecmascript file had an error
+  4 | import dynamic from "next/dynamic";
+  5 |
+> 6 | const CursorGlow = dynamic(() => import("@/components/CursorGlow"), { ssr: false });
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 |
+  8 | const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
+  9 | const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: "swap" });
+
+`ssr: false` is not allowed with `next/dynamic` in Server Components. Please move it into a Client Component.
+
+
+    at <unknown> (./src/app/layout.tsx:6:20)

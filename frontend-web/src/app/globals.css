@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --bordeaux: #0E0000;
+  --mahogany: #64090C;
+  --red-carriage: #9C0512;
+  --ceramic-yellow: #F8D794;
+  --pastel-beige: #EFEACD;
+  --glass-bg: rgba(0, 0, 0, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.05);
+
+  /* Backwards-compatible aliases for existing components */
+  --obsidian: #0E0000;
+  --gold: #F8D794;
+  --crimson: #64090C;
+  --white: #EFEACD;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: none !important;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--bordeaux);
+  color: var(--pastel-beige);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--ceramic-yellow);
+  color: var(--bordeaux);
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(248, 215, 148, 0.3);
+  border-radius: 4px;
+}
+
+/* ── Utilities ─────────────────────────────────── */
+.font-display {
+  font-family: var(--font-playfair), serif;
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F8D794, #FFF3D6, #F8D794);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-strong {
+  background: rgba(14, 0, 0, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(248, 215, 148, 0.1);
+}
+
+/* ── Animations ────────────────────────────────── */
+@keyframes breathing {
+
+  0%,
+  100% {
+    box-shadow: 0 0 40px rgba(248, 215, 148, 0.15);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 80px rgba(248, 215, 148, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
